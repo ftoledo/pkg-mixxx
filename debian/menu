@@ -1,0 +1,6 @@
+?package(mixxx):\
+ needs="X11"\
+ section="Applications/Sound"\
+ title="Mixxx"\
+ command="/usr/bin/mixxx"\
+ icon="/usr/share/pixmaps/mixxx.xpm"

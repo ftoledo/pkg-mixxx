@@ -1,0 +1,473 @@
+mixxx (2.0.0-1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Tue, 12 Jan 2016 21:57:48 -0300
+
+mixxx (1.11.0~dfsg-5) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control:
+      - Remove libvamp-hostsdk3 from B-D. It is pulled in by vamp-pluin-sdk
+        anyway. (Closes: #794975)
+      - Bump Standards-Version (no changes needed).
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 09 Aug 2015 10:33:54 +0200
+
+mixxx (1.11.0~dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches/: patchset refreshed
+    - 1001-buildsystem.patch updated (Closes: #698796, #761978)
+      (m68k and mips variants added to supported architectures)
+  * debian/control: S-V bump 3.9.4 => 3.9.5 (no changes needed)
+  * debian/copyright: files and licenses updated
+  * debian/control: Uploaders field updated
+    - Matteo F. Vescovi <mfvescovi@gmail.com> added
+
+ -- Matteo F. Vescovi <mfvescovi@gmail.com>  Thu, 18 Sep 2014 11:56:54 +0200
+
+mixxx (1.11.0~dfsg-3) unstable; urgency=low
+
+  * Attempt to fix build failures on the following Ubuntu's
+    architectures:
+    - arm64
+    - armhf
+    - ppc64el
+  * Fix build failures on ARM as qreal is float,
+    not double. (Closes: #728148)
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 29 Jan 2014 09:51:23 +0000
+
+mixxx (1.11.0~dfsg-2) unstable; urgency=low
+
+  * Install missing libmixxxminimal.so. Let upstream buildsystem install
+    the XPM file by itself. Thanks to Takeshi Soejima for reporting
+    this. (Closes: #725225)
+  * Refresh Ubuntu patches.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 04 Oct 2013 14:14:17 +0100
+
+mixxx (1.11.0~dfsg-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Alessio Treglia ]
+  * Imported Upstream version 1.11.0~dfsg (Closes: #707743)
+  * Update debian/copyright.
+  * Bump Standards.
+
+  [ Matteo F. Vescovi ]
+  * debian/: dh 7 => 9 bump
+  * debian/control: new b-deps added
+    libfftw3-dev, libprotobuf-dev,
+    libusb-1.0-0-dev and protobuf-compiler
+  * debian/patches/: patchset updated
+    - 0002-norpath.patch dropped
+    - 0004-soundtouch.patch refreshed
+    - 1001-ftbfs_gcc47.patch dropped
+  * debian/control: vamp b-deps added
+  * debian/: pdf manual references dropped (Closes: #695972)
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Mon, 30 Sep 2013 17:10:34 +0200
+
+mixxx (1.10.1~dfsg0-1) unstable; urgency=low
+
+  * New upstream bugfix-only release:
+    - Fix encoding error which prevents users to use folders with accented
+      characters in the pathname (Closes: #664671).
+  * Strip non-DFSG free PDF manual.
+  * Update watch file.
+  * Fix repackaging mechanism.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 27 Jun 2012 09:11:02 +0200
+
+mixxx (1.10.0~dfsg0-5) unstable; urgency=low
+
+  * Apply 1001-ftbfs_gcc47.patch to fix FTBFS with GCC 4.7 on Ubuntu too.
+    Thanks to Ilya Barygin for pointing out this. (Closes: #678182)
+  * debian/copyright:
+    - Update to the new machine-readable format.
+    - Sort licenses stanzas
+    - Group files by license
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 20 Jun 2012 09:42:16 +0200
+
+mixxx (1.10.0~dfsg0-4) unstable; urgency=low
+
+  * Append CPPFLAGS to the end of CFLAGS/CXXFLAGS as the
+    buildsystem ignores them. (Closes: #674971)
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 29 May 2012 10:20:58 +0200
+
+mixxx (1.10.0~dfsg0-3) unstable; urgency=low
+
+  * Enable hardening flags.
+  * Add repack.sh mechanism to automatically strip non-DFSG
+    clean stuff out of the tarball.
+  * Fix watch file.
+  * Bump Standards.
+  * Update Vcs fields.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 28 May 2012 10:49:16 +0200
+
+mixxx (1.10.0~dfsg0-2) unstable; urgency=low
+
+  * Remove dependency on libwavpack.
+  * Fix FTBFS with GCC 4.7 (Closes: #674335).
+  * Fix watch file.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 27 May 2012 13:17:12 +0200
+
+mixxx (1.10.0~dfsg0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Some updates and fixes.
+  * Drop 01-werror_format_security.patch, no longer needed.
+  * Update 10_uptodate_configure.dpatch, rename it to
+    0001-update_configure.patch.
+  * Drop 15-various_archs_support.patch, applied upstream.
+  * Rename 20_norpath.patch to 0002-norpath.patch
+  * Rename 30-disable_soundsourcem4a.patch to
+    0003-disable_soundsourcem4a.patch.
+  * Refresh and set a new name to 0004-soundtouch.patch
+  * Rename 91-desktop_file.patch -> 0091-desktop_file.patch
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 31 Dec 2011 09:52:59 +0100
+
+mixxx (1.9.2~dfsg0-1) unstable; urgency=low
+
+  * New upstream bugfix-only release.
+  * Fix FTBFS with -Werror=format-security enabled (Closes: #646348).
+  * Refresh patches.
+  * Update debian/copyright.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 08 Nov 2011 14:44:28 +0100
+
+mixxx (1.9.0+dfsg0-5) unstable; urgency=low
+
+  * Add s390x support (Closes: #638879)
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 23 Aug 2011 09:47:01 +0200
+
+mixxx (1.9.0+dfsg0-4) unstable; urgency=low
+
+  * Replace negated list of architectures with linux-any (Closes: #634789).
+  * Use DH's autotools_dev add-on to update config.{guess,sub} files.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 25 Jul 2011 10:12:40 +0200
+
+mixxx (1.9.0+dfsg0-3) unstable; urgency=low
+
+  * Limit supported architectures to linux-any only.
+  * Add support for sh3, sh4 and powerpcspe.
+    Thanks to Nobuhiro Iwamatsu for the patch. (Closes: #632609)
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 04 Jul 2011 10:13:15 +0200
+
+mixxx (1.9.0+dfsg0-2) unstable; urgency=low
+
+  * Add armhf support (Closes: #623152).
+  * Enable parallel builds.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 09 May 2011 01:02:44 +0200
+
+mixxx (1.9.0+dfsg0-1) unstable; urgency=low
+
+  * Improve description, Mixxx supports FLAC file format too.
+  * Sort build-deps.
+  * Add libwavpack-dev to Build-Depends.
+  * Enable WavPack plugin.
+  * debian/gbp.conf: Set compression to bzip2.
+  * Actually build Mixxx against libsoundtouch provided by Debian.
+  * Imported Upstream version 1.9.0+dfsg0:
+    - Get rid of local copy of soundtouch.
+  * debian/copyright:
+    - Remove comment about soundtouch, sources are now linked against
+      the system-wide copy.
+    - Update to DEP-5 rev.174.
+  * Get rid of unneeded patches, clean-up series files.
+  * Build-depend on libqtwebkit-dev.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 14 Apr 2011 20:40:58 +0200
+
+mixxx (1.9.0-3) unstable; urgency=low
+
+  * debian/patches/15-various_archs_support.patch:
+    - Remove -Dalpha from CPPDEFINES, fixes FTBFS on alpha (Closes: #598749).
+    - Allow compilation on alpha, armel, hppa, hurd-i386, ia64, kfreebsd-*,
+      mips, mipsel, sparc, s390 (Closes: #616177).
+  * Disable libportmidi-dev for hurd-i386,kfreebsd-* architectures.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 04 Mar 2011 00:45:06 +0100
+
+mixxx (1.9.0-2) unstable; urgency=low
+
+  * First attempt to fix #616177:
+    - Extend the list of supported machines.
+    - Properly set and pass the value of machine to SCons.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 03 Mar 2011 14:00:02 +0100
+
+mixxx (1.9.0-1) unstable; urgency=low
+
+  [ Alessio Treglia ]
+  * New upstream release.
+  * Build against the latest libsoundtouch.
+  * Refresh 20_norpath.patch.
+  * Refresh 30-disable_soundsourcem4a.patch patch.
+  * Disable 40-alpha_ftbfs.patch patch for now.
+  * Improve the clean target to properly clean the build environment.
+  * Sort build-dependencies alphabetically.
+  * Add dh_scour support to optimize SVG files.
+  * Add Shoutcast support.
+  * Build-Depends on libtag1-dev.
+
+  [ Miguel Colon ]
+  * Strip the SONAME out of the soundtouch build dependency.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 27 Feb 2011 11:51:32 +0100
+
+mixxx (1.8.2-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * Drop debian/patches/1001-scripts_eval_sigsegv.patch as it isn't
+    needed anymore.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 17 Dec 2010 00:04:57 +0100
+
+mixxx (1.8.1-5) unstable; urgency=low
+
+  * 40-alpha_ftbfs.patch has been forwarded.
+  * Add patch to fix SIGSEGV in the scripts evaluation.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 01 Dec 2010 09:23:55 +0100
+
+mixxx (1.8.1-4) unstable; urgency=low
+
+  * Really apply 40-alpha_ftbfs.patch.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 29 Nov 2010 00:36:08 +0100
+
+mixxx (1.8.1-3) unstable; urgency=low
+
+  * Attempt to fix FTBFS on alpha.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 28 Nov 2010 12:39:29 +0100
+
+mixxx (1.8.1-2) unstable; urgency=low
+
+  * First upload to unstable, Mixxx 1.7.2 was removed from Squeeze.
+  * Minimize the delta between Debian and Ubuntu:
+    - 91-desktop_file.patch is Debian-specific as Ubuntu uses PulseAudio
+      by default.
+    - Introduce new SUBSTVAR in debian/control and pass it to dh_gencontrol
+      to set different dependencies depending on the distribution.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 11 Nov 2010 14:15:11 +0100
+
+mixxx (1.8.1-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 19 Oct 2010 09:05:19 +0200
+
+mixxx (1.8.0.2-1) experimental; urgency=low
+
+  * Imported Upstream version 1.8.0.2
+  * Refresh 20_norpath.patch.
+  * Allow ALLOW_X86_OPTIMIZATIONS on amd64 only, fixes FTBFS on ia64
+    (Closes: #599978).
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 18 Oct 2010 13:13:57 +0200
+
+mixxx (1.8.0.1-1) experimental; urgency=low
+
+  * No longer need to repack the upstream's tarball, skins can be
+    redistributed now.
+  * Drop build-dep on libwavpack-dev, the wavpack plugin seems not
+    stable enough.
+  * Set skins' file permissions properly.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 23 Sep 2010 18:46:42 +0200
+
+mixxx (1.8.0.1~dfsg-1) experimental; urgency=low
+
+  * New upstream release:
+    - Fix visual artifact due to Qt bug (LP: #645804).
+  * Add README.source to document the repacking.
+  * Update copyright information.
+  * Add get-orig-source target.
+  * Refresh patches.
+  * Build-depends on libwavpack-dev.
+  * Update debian/gbp.conf.
+  * Install missing icon file (LP: #641880).
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 23 Sep 2010 11:26:16 +0200
+
+mixxx (1.8.0~rc-dfsg-1) experimental; urgency=low
+
+  * New upstream release.
+  * Set Maintainer to Debian Multimedia Maintainers team, update Uploaders
+    field; ACKed by Free Ekanayaka.
+  * Add Vcs fields.
+  * Add myself to the Uploaders field.
+  * Switch to format 3.0 (quilt).
+  * Refresh patches and tag them as per DEP-3.
+  * Add 30-disable_soundsourcem4a.patch patch to disable soundsourcem4a plugin.
+  * Add patch to fix desktop file as per spec.
+  * Build-Depends on libportmidi-dev.
+  * Depends on libqt4-sql-sqlite.
+  * Add debian/source/local-options file.
+  * Remove desktop file, already provided by upstream.
+  * Rename icon file:
+    - 16x16 XPM icon is unnecessary.
+    - Update install and dirs file properly.
+  * Update debian/menu properly.
+  * Fix binary-control-field-duplicates-source field "section" lintian
+    warning.
+  * Update debian/watch file.
+  * Install the manual in /usr/share/mixxx-data/.
+  * Install doc-base registration file.
+  * Update the link to the manual (Closes: #576544).
+  * Add configuration file for git-buildpackage.
+  * Add .gitignore file.
+  * Update homepage field.
+  * Bump Standards.
+  * Clean-up.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 18 Sep 2010 17:15:53 +0200
+
+mixxx (1.7.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #437574)
+  * debian/rules: do not build against libdjconsole (closes: #554022),
+    mixxx now uses Hercules driver instead
+  * debian/rules: invoke debhelper zen guru, switch to quilt
+  * debian/patches/20_norpath.patch: update rpath patch
+  * debian/mixxx.manpages: install manpage the new way
+  * debian/control: tighten debhelper version, span on multiple lines
+  * debian/control: add misc-depends to mixxx-data
+
+ -- Paul Brossier <piem@debian.org>  Thu, 07 Jan 2010 04:02:37 +0100
+
+mixxx (1.7.1-1) unstable; urgency=low
+
+  * New upstream release (closes: #519517, #427291, #500859)
+  * Bugs closed in previous versions (closes: #480233, #397385)
+  * Acknowledge NMUed bugs (closes: #375752, #435950, #499572, #523692),
+    thanks to Free, Steinar, and Barry
+  * debian/control
+    - added Homepage field
+    - add Build-depends on imagemagick
+    - add Build-Depends on libsountouch-dev
+    - bump Standard-Version
+    - bump build-depends to debhelper >= 7.0.0
+  * debian/rules
+    - create and install mixxx.xpm 32x32
+    - remove COPYING, shifter.sh, xsl, php, and Thumbs.db files from skins 
+    - make sure js files are not executables
+    - use dh_prep instead of dh_clean -k
+  * debian/README.source: add reference to dpatch
+  * debian/mixxx.desktop: improve comment
+  * debian/menu: update section to Applications/Sound
+  * debian/compat: bump to 7
+  * debian/copyright: updated to list copyright of each external libs
+  * debian/patches/10_soundtouch.dpatch: use packaged libsoundtouch 
+    (not activated yet, needs 1.4.1)
+  * debian/patches/10_uptodate_configure.dpatch: update config.{sub,guess}
+
+ -- Paul Brossier <piem@debian.org>  Fri, 30 Oct 2009 12:13:34 +0100
+
+mixxx (1.6.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove unnecessary build-dep on libglib1.2. (Closes: #523692).
+  * Update desktop file. (Closes: #499572).
+  * Update deprecated xlibmesa-gl1-dev with libgl1-mesa-dev.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sat, 17 Oct 2009 13:36:19 -0400
+
+mixxx (1.6.1-1) unstable; urgency=low
+
+  * New Upstream Version
+
+ -- Free Ekanayaka <freee@debian.org>  Sat, 15 Nov 2008 00:00:37 +0100
+
+mixxx (1.6.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #496184)
+
+ -- Free Ekanayaka <freee@debian.org>  Tue, 26 Aug 2008 00:53:21 +0100
+
+mixxx (1.6.0~beta3-2) unstable; urgency=low
+
+  * Build depend on libqt4-opengl-dev only if available, otherwise use
+    libqt4-dev (makes backports easier)
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 09 Jun 2008 08:27:28 +0100
+
+mixxx (1.6.0~beta3-1) unstable; urgency=low
+
+  * New upstream release
+  * Build depends on libqt4-opengl-dev (Closes: #482238), thanks
+    to Peter Green
+  * Fixed bashism in debian/rules (Closes: #478408), thanks to Chris
+    Lamb
+  * Fixed FTBFS if built twice in a row (Closes: #483901) thanks
+    to Peter Green
+
+ -- Free Ekanayaka <freee@debian.org>  Thu, 05 Jun 2008 00:21:45 +0100
+
+mixxx (1.6.0~beta2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Free Ekanayaka <freee@debian.org>  Fri, 04 Apr 2008 12:02:15 +0200
+
+mixxx (1.6.0~beta1-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/patched:
+      - dropped typos.patch (fixed upstream)
+  * debian/control:
+      - build depend on libqt4-dev and scons
+
+ -- Free Ekanayaka <freee@debian.org>  Thu, 27 Dec 2007 09:53:41 +0000
+
+mixxx (1.5.0.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #424972)
+  * debian/control:
+    - depend on portaudio 19, djconsole and libaudiofile
+    - added myself to uploaders
+    - use source:Version instead of Source:Version (Closes: #435950)
+  * debian/rules:
+    - use dpatch to manage diffs
+    - enable ALSA (Closes: #397386)
+
+ -- Free Ekanayaka <freee@debian.org>  Tue, 18 Dec 2007 13:01:13 +0000
+
+mixxx (1.4.2-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Replace unsatisfiable build-dependency on xlibmesa-glu-dev by
+    libglu1-mesa-dev; fixes FTBFS. (Closes: #374590)
+
+ -- Steinar H. Gunderson <sesse@debian.org>  Wed, 28 Jun 2006 00:23:04 +0200
+
+mixxx (1.4.2-1) unstable; urgency=low
+
+  * Initial Release (closes: #227017).
+  * Modified src/mixxx.pro to be happier on debian
+  * Added #ifdef __vbrheadersdk__ to src/soundsourcemp3.c
+  * Removed non-free files in lib/gplot and lib/vbrheadersdk
+  * Converted png to xpm to add to menu icon, added .desktop
+  * Disable directRendering check to avoid crash when Visual=Simple
+  * Prevent latency slider to try setting the latency to 0
+  * Correct a typo on 'rendering' in mixxxview.cpp
+
+ -- Paul Brossier <piem@debian.org>  Sat, 13 Aug 2005 00:14:24 +0100
+

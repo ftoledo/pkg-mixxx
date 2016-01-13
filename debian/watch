@@ -1,0 +1,5 @@
+version=3
+opts=uversionmangle=s/-(beta|rc|RC)(.*)/~\$1\$2/,\
+dversionmangle=s/~dfsg[0-9]*// \
+http://downloads.mixxx.org/mixxx-(.*)/mixxx-(.*)-src.tar.gz \
+     debian sh debian/repack.stub

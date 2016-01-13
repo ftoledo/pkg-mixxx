@@ -1,0 +1,168 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Mixxx
+Upstream-Contact:
+ Tue Haste Andersen <haste@diku.dk>
+ Ken Haste Andersen <kha@dfu.min.dk>
+Source: http://downloads.mixxx.org/
+
+Files: *
+Copyright:
+ 2001-2010 Mixxx development team
+ 2010 Jeff Nelson <dj.synth@gmail.com>
+ 2008 Mark Hills <mark@pogo.org.uk>
+ 2008 by Garth Dahlstrom <ironstorm@users.sf.net>
+ 2002-2007 Tim Goetze <tim@quitte.de>
+ 2006 David Yeh <dtyeh@ccrma.stanford.edu>
+ 2003 by Svein Magne Bang
+ 2002,2003 Erik de Castro Lopo <erikd@mega-nerd.com>
+ 2000-2002 Richard W.E. Furse
+License: GPL-2+
+
+Files: lib/hidapi-0.8.0-pre/*
+Copyright:
+  2005-2009, Google Inc.
+  2003-2004 Mark Borgerding
+License: BSD-3-clause
+
+Files: lib/vamp-2.3/*
+Copyright:
+  2000-2006 Chris Cannam <cannam@all-day-breakfast.com>
+  2007-2009 Mark Levy
+License: MIT
+
+Files:
+ lib/ladspa/*
+Copyright:
+ 2006 Stefan Langhammer, Thomas Rogg
+ 2000-2002 Richard W.E. Furse, Paul Barton-Davis, Stefan Westerfeld
+License: LGPL-2.1+
+
+Files: lib/xwax/*
+Copyright: 2012 Mark Hills <mark@pogo.org.uk>
+License: GPL-2
+
+Files: debian/*
+Copyright:
+ 2010-2011 Alessio Treglia <alessio@debian.org>
+ 2007-2008 Free Ekanayaka <freee@debian.org>
+ 2004-2009 Paul Brossier <piem@debian.org>
+License: GPL-2+
+
+Files: res/skins/LateNight*/*
+ res/skins/Deere*/*
+ res/skins/Phoney*/*
+ res/skins/Shade*/*
+Copyright: 2010 jus <jus@justmail.de>
+License: CC-BY-SA
+ You are free:
+ to Share - to copy, distribute and transmit the work
+ to Remix - to adapt the work
+ .
+ Under the following conditions:
+ Attribution - You must attribute the work in the manner specified by the
+ author or licensor (but not in any way that suggests that they endorse
+ you or your use of the work).
+ .
+ Share Alike - If you alter, transform, or build upon this work, you may
+ distribute the resulting work only under the same or similar license to
+ this one.
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-2' file.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-2' file.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+Comment:
+ On Debian systems the full text of the GNU Lesser General Public
+ License can be found in the `/usr/share/common-licenses/LGPL-2.1' file.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+    * Neither the author nor the names of any contributors may be used to
+      endorse or promote products derived from this software without specific
+      prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person
+ obtaining a copy of this software and associated documentation
+ files (the "Software"), to deal in the Software without
+ restriction, including without limitation the rights to use, copy,
+ modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR
+ ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ .
+ Except as contained in this notice, the names of the Centre for
+ Digital Music; Queen Mary, University of London; and Chris Cannam
+ shall not be used in advertising or otherwise to promote the sale,
+ use or other dealings in this Software without prior written
+ authorization.

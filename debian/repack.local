@@ -1,0 +1,6 @@
+SUFFIX=~dfsg
+rm debian/
+rm lib/soundtouch-*/ \
+ lib/libsamplerate/ \
+ lib/scratchlib/ \
+ Mixxx-Manual.pdf

@@ -1,0 +1,53 @@
+#!/usr/bin/make -f
+
+export REPACK_SH=$(CURDIR)/debian/repack.sh
+
+export CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+# The build system ignores CPPFLAGS, pass them to CFLAGS/CXXFLAGS to enable
+# the missing (hardening) flags.
+export CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
+export CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
+export LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+export DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+export DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+export DEB_HOST_ARCH_CPU  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+
+ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
+	SUBSTVARS = -Vdist:Depends="pulseaudio-utils"
+else
+	SUBSTVARS = -Vdist:Depends=""
+endif
+
+SCONS_OPTS = install_root=$(CURDIR)/debian/tmp/usr qtdir=/usr/share/qt4 prefix=/usr
+SCONS_OPTS += machine=$(DEB_HOST_ARCH)
+
+%:
+	dh $@ --parallel --with=scour,autotools_dev
+
+override_dh_auto_build:
+	# create icons
+	convert res/images/mixxx-icon.png -geometry 32x32 mixxx.xpm
+	scons $(SCONS_OPTS) w=1
+	docbook-to-man debian/mixxx.sgml > mixxx.1 
+
+override_dh_auto_clean:
+	scons $(SCONS_OPTS) -c || true
+	rm -rf .sconf_temp/ cache/ linux_build/
+	dh_clean .sconsign.dblite build/qt4.pyc cachecustom.py \
+		config.log src/build.h build/*.pyc mixxx.1 mixxx.xpm
+	dh_auto_clean
+
+override_dh_auto_install:
+	scons $(SCONS_OPTS) install
+	find $(CURDIR)/debian/tmp \( -name COPYING -o -name Thumbs.db \
+		-o -name shifter.sh -o -name '*.xsl' -o -name '*.php' \) \
+		-exec rm -f {} \;
+	find $(CURDIR)/debian/tmp -name '*.js' -exec chmod -x {} \;
+	find $(CURDIR)/debian/tmp/usr/share/mixxx/ -type f -exec chmod -x {} \;
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(SUBSTVARS)
+
+get-orig-source:
+	uscan --force-download

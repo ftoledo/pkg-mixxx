@@ -1,0 +1,101 @@
+Source: mixxx
+Section: sound
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Paul Brossier <piem@debian.org>,
+ Free Ekanayaka <freee@debian.org>,
+ Alessio Treglia <alessio@debian.org>,
+ Matteo F. Vescovi <mfv@debian.org>
+Build-Depends:
+ autotools-dev,
+ debhelper (>= 9),
+ docbook-to-man,
+ imagemagick,
+ libaudiofile-dev,
+ libexpat-dev,
+ libfftw3-dev,
+ libgl1-mesa-dev,
+ libglu1-mesa-dev,
+ libid3tag0-dev,
+ libjack-dev,
+ libmad0-dev,
+ libogg-dev,
+ libportmidi-dev [linux-any],
+ libprotobuf-dev,
+ libqt4-opengl-dev | libqt4-dev,
+ libqtwebkit-dev,
+ libshout-dev,
+ libsndfile1-dev,
+ libsoundtouch-dev (>= 1.5.0),
+ libtag1-dev,
+ libusb-1.0-0-dev,
+ libvorbis-dev,
+ pkg-config,
+ portaudio19-dev,
+ protobuf-compiler,
+ python-scour,
+ scons,
+ vamp-plugin-sdk,
+ libsqlite3-dev,
+ libqt4-dev,
+ libqt4-sql-sqlite,
+ libportmidi-dev,
+ libopus-dev,
+ libshout-dev,
+ libtag1-dev,
+ libprotobuf-dev,
+ protobuf-compiler,
+ vamp-plugin-sdk,
+ libusb-1.0-0-dev,
+ libfftw3-dev,
+ libmad0-dev,
+ portaudio19-dev,
+ libchromaprint-dev,
+ librubberband-dev,
+ libid3tag0-dev,
+ libflac-dev,
+ libsndfile-dev,
+ libfaad-dev,
+ libmp4v2-dev,
+ libavcodec-dev,
+ libavutil-dev,
+ libqt4-opengl-dev
+Standards-Version: 3.9.6
+Vcs-Git: git://anonscm.debian.org/pkg-multimedia/mixxx.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-multimedia/mixxx.git
+Homepage: http://www.mixxx.org/
+
+Package: mixxx
+Architecture: linux-any
+Depends:
+ libqt4-sql-sqlite,
+ mixxx-data (= ${source:Version}),
+ ${dist:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends}
+Suggests:
+ pdf-viewer
+Description: Digital Disc Jockey Interface
+ Mixxx is a digital DJ system, where Wave, Ogg, FLAC and MP3 files can be
+ mixed on a computer for use in live performances. Filters, crossfader, and
+ speed control are provided. Mixxx can sync the 2 streams automatically, using
+ an algorithm to detect the beat.
+ .
+ Mixxx works with Jack or OSS, can be controlled from the GUI or from external
+ controllers, including MIDI devices and joysticks, and supports skins.
+
+Package: mixxx-data
+Architecture: all
+Depends:
+ ${misc:Depends}
+Description: Digital Disc Jockey Interface -- data files
+ Mixxx is a digital DJ system, where Wave, Ogg, FLAC and MP3 files can be
+ mixed on a computer for use in live performances. Filters, crossfader, and
+ speed control are provided. Mixxx can sync the 2 streams automatically, using
+ an algorithm to detect the beat.
+ .
+ Mixxx works with Jack or OSS, can be controlled from the GUI or from external
+ controllers, including MIDI devices and joysticks, and supports skins.
+ .
+ This package provides images and skin configuration files required for mixxx.

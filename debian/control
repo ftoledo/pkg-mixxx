@@ -1,12 +1,7 @@
 Source: mixxx
 Section: sound
 Priority: optional
-Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
-Uploaders:
- Paul Brossier <piem@debian.org>,
- Free Ekanayaka <freee@debian.org>,
- Alessio Treglia <alessio@debian.org>,
- Matteo F. Vescovi <mfv@debian.org>
+Maintainer: Fernando Toledo <ragnarok@docksud.com.ar>
 Build-Depends:
  autotools-dev,
  debhelper (>= 9),
